@@ -7,7 +7,7 @@ bool is_operand (const char* token) {
 }
 
 bool is_operator(const char* token) {
-    return ((token[0] == '!') or (token[0] == '+') or (token[0] == '-') or (token[0] == '*') or (token[0] == '/'));
+    return ((token[0] == '!') or (token[0] == '+') or (token[0] == '-') or (token[0] == 'x') or (token[0] == '/'));
 }
 
 int rpn_eval(int n, const char* tab[]) {
@@ -22,31 +22,31 @@ int rpn_eval(int n, const char* tab[]) {
             int a;
             int b;
             if (tab[j][0] == '!') {
-                print_stack(stack,i);
+                // print_stack(stack,i);
                 a=pop(stack,i);
                 push(stack,i,-a);
             }  
             else {
                 if (tab[j][0]=='+') {
-                    print_stack(stack,i);
+                    // print_stack(stack,i);
                     b=pop(stack,i);
                     a=pop(stack,i);
                     push(stack,i,a+b);
                 }
                 if (tab[j][0]=='-') {
-                    print_stack(stack,i);
+                    // print_stack(stack,i);
                     b=pop(stack,i);
                     a=pop(stack,i);
                     push(stack,i,a-b);
                 }
                 if (tab[j][0]=='x') {
-                    print_stack(stack,i);
+                    // print_stack(stack,i);
                     b=pop(stack,i);
                     a=pop(stack,i);
                     push(stack,i,a*b);
                 }
                 if (tab[j][0]=='/') {
-                    print_stack(stack,i);
+                    // print_stack(stack,i);
                     b=pop(stack,i);
                     a=pop(stack,i);
                     push(stack,i,a/b);
