@@ -15,10 +15,10 @@ int rpn_eval(int n, const char* tab[]) {
     int* stack=init_stack(n);
     int i = 0; // i repère la première case vide
     for (int j = 0 ; j < n ; j++) {
-        if (is_operand(*tab[j])) {
+        if (is_operand(tab[j])) {
             push(stack,i,atoi(tab[j]));
         }
-        if (is_operator(*tab[j])) {
+        if (is_operator(tab[j])) {
             int a;
             int b;
             if (tab[j][0] == '!') {
