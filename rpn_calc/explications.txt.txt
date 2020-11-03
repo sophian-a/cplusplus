@@ -1,0 +1,2 @@
+Le fichier rpn.cpp correspond au main de la fonction RPN lorsqu'on souhaite l'exécuter par soi-même.
+Le fichier main-rpn_calc.cpp correspond au main utilisé pour faire les tests.
