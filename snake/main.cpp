@@ -25,9 +25,9 @@ void backgroundSetup(const int& nx, const int& ny, int* background){
 void add_snake(int* snake, int* bg, int& snl, const int& nx, const int& ny){
 	int x;
 	int y;
-	for(int i=0; i<2*snl; i++){
+	for(int i=0; i<snl; i++){
 		x = snake[i];
-		y = snake[snl+i];
+		y = snake[SNAKE_LEN+i];
     	bg[x + y*nx]=1;
     }
 }
@@ -35,31 +35,31 @@ void add_snake(int* snake, int* bg, int& snl, const int& nx, const int& ny){
 void remove_snake(int* snake, int* bg, int& snl, const int& nx, const int& ny){
 	int x;
 	int y;
-	for(int i=0; i<2*snl; i++){
+	for(int i=0; i<snl; i++){
 		x = snake[i];
-		y = snake[snl+i];
+		y = snake[SNAKE_LEN+i];
     	bg[x + y*nx]=0;
     }
 }
 
-// On utilise les touches zqsd pour les flèches
+// On utilise les touches ijkl pour les flèches
 void snake_movement(char key, int* dxdy){
-	if (key=='z') {
+	if (key=='i') {
 		//dxdy={0,1};
 		dxdy[0]=0;
-		dxdy[1]=1;
+		dxdy[1]=-1;
 	}
-	if (key=='q') {
+	if (key=='j') {
 		//dxdy={-1,0};
 		dxdy[0]=-1;
 		dxdy[1]=0;
 	}
-	if (key=='s') {
+	if (key=='k') {
 		//dxdy={0,-1};
 		dxdy[0]=0;
-		dxdy[1]=-1;
+		dxdy[1]=1;
 	}
-	if (key=='d') {
+	if (key=='l') {
 		//dxdy={1,0};
 		dxdy[0]=1;
 		dxdy[1]=0;
@@ -68,12 +68,12 @@ void snake_movement(char key, int* dxdy){
 
 bool verifyBorder(int* snake, const int& nx, const int& ny){
 	for (int i=0; i<SNAKE_LEN; i++) {
-		if (snake[i]<=0 or snake[i]>=nx) {
+		if (snake[i]==0 or snake[i]==nx) {
 			return false;
 		}
 	}
 	for (int i=SNAKE_LEN; i<2*SNAKE_LEN;i++) {
-		if (snake[i]<=0 or snake[i]>=ny) {
+		if (snake[i]==0 or snake[i]==ny) {
 			return false;
 		}
 	}
@@ -88,8 +88,8 @@ void setupSnake(int* snake, int& snake_len, const int& nx, const int& ny){
 		snake[SNAKE_LEN+i]=snake[SNAKE_LEN];
 	}
 	for (int j=snake_len; j<SNAKE_LEN; j++){
-		snake[j]=1;
-		snake[SNAKE_LEN + j]=1;
+		snake[j]=-1;
+		snake[SNAKE_LEN + j]=-1;
 	}
 }
 
@@ -137,8 +137,8 @@ void startGame(const int& lap, const int& nx, const int& ny, int& snl, int* snak
 
 
 int main(){
-    const int nx = 50;
-    const int ny = 25;
+    const int nx = 30;
+    const int ny = 15;
     const int lap=200;
 
     int snake_len = 3;
