@@ -64,6 +64,7 @@ public:
             last_cell = cell ;
         }
     }
+    
     void remove_front () {
         if (not is_empty()) {
             IntCell* p = first_cell ;
@@ -108,18 +109,14 @@ public:
             else {
                 for (int k = 1 ; k<s ; k++) {
                     p = (*p).next_cell ;
-                    if ((*p).content = n) {
-                        IntCell* p_prev = (*p).prev_cell ;
-                        (*p_prev).next_cell = (*p).next_cell ;
+                    if ((*p).content == n) {
+                        (*((*p).prev_cell)).next_cell = (*p).next_cell ;
                         if ((*p).next_cell != nullptr) {
-                            IntCell* p_next = (*p).next_cell ;
-                            (*p_next).prev_cell = (*p).prev_cell ;
+                            (*((*p).next_cell)).prev_cell = (*p).prev_cell ;
                             delete p ;
-                            std::cout << "Pas de remove_back" << std::endl ;
                         }
                         else
                             remove_back() ;
-                            std::cout << "remove_back" << std::endl ;
                         break ;
                     }
                 }
@@ -127,30 +124,14 @@ public:
         }
     }
 
-            // else {
-        //     for (int k = 1 ; k<s ; k++) {
-        //         p = (*p).next_cell ;
-        //         if ((*p).content = n) {
-        //             (*((*p).prev_cell)).next_cell = (*p).next_cell ;
-        //             if ((*p).next_cell != nullptr) {
-        //                 (*((*p).next_cell)).prev_cell = (*p).prev_cell ;
-        //                 delete p ;
-        //             }
-        //             else
-        //                 remove_back() ;
-        //             break ;
-        //         }
-        //     }
-        // }
-
     bool search (int n) {
         int s = size() ;
         IntCell* p = first_cell ;
-        if ((*p).content = n)
+        if ((*p).content == n)
             return true ;
         for (int k = 1 ; k<s ; k++) {
             p = (*p).next_cell ;
-            if ((*p).content = n)
+            if ((*p).content == n)
                 return true ;
         }
         return false ;
