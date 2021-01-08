@@ -1,13 +1,12 @@
 CXX=g++
-CXXFLAGS=-g
+CXXFLAGS=-Wall -ggdb
 RM=rm -f
 
-test : intlist.o test-intlist.o
+test : test-intlist.o intlist.h
 	$(CXX) $(CXXFLAGS) $^ -o $@
 test-intlist.o : test-intlist.cpp intlist.h
-intlist.o : intlist.h
 
 %.o:%.cpp; $(CXX) $(CXXFLAGS) -o $@ -c $<
 
 clean :
-	$(RM) intlist.o test-intlist.o test
+	$(RM) test-intlist.o test

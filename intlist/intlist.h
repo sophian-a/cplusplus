@@ -1,3 +1,5 @@
+#include <iostream>
+
 class IntCell { 
     friend class IntList;
 private:
