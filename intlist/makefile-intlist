@@ -4,8 +4,8 @@ RM=rm -f
 
 test : intlist.o test-intlist.o
 	$(CXX) $(CXXFLAGS) $^ -o $@
-
 test-intlist.o : test-intlist.cpp intlist.h
+intlist.o : intlist.h
 
 %.o:%.cpp; $(CXX) $(CXXFLAGS) -o $@ -c $<
 
