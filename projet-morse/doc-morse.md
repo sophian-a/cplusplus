@@ -16,7 +16,7 @@ Il faut bien utiliser les caractères `-` et `.` sans quoi le programme ne fonct
 
 ### Fonctionnement du programme
 Pour lancer le programme, il faut le compiler (commande `make`) puis l'exécuter : `./morse`
-Puis le programme demande à l'utilisateur de saisir sa phrase à coder/décoder ou le nom du fichier audio à décoder. Le programme reconnaît automatiquement s'il s'agit de morse ou de texte ou d'un nom de fichier. Le texte doit être écrit en majuscule. Le code morse doit respecter les conventions décrites ci-dessus. Lee fichier doit être situé dans le même répertoire.
+Puis le programme demande à l'utilisateur de saisir sa phrase à coder/décoder ou le nom du fichier audio à décoder (avec l'extension `.wav` !). Le programme reconnaît automatiquement s'il s'agit de morse ou de texte ou d'un nom de fichier. Le texte doit être écrit en majuscule. Le code morse doit respecter les conventions décrites ci-dessus. Lee fichier doit être situé dans le même répertoire.
 * S'il s'agit de texte, le programme affiche la traduction en morse (avec les points et les tirets) et génère un fichier .wav dans le même répertoire, nommé `codemorse.wav` et qui correspond au code morse en version audio. Deux fréquences différentes sont utilisées pour coder le point et le tiret : un silence correspond au point et un son au tiret (avec point et tiret qui se réfèrent à la syntaxe utilisée par le programme).
 * S'il s'agit de morse, le programme traduit en alphabet latin et affiche simplement la traduction.
 * S'il s'agit d'un fichier audio, le programme affiche la traduction en alphabet latin.
