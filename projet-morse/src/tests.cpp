@@ -29,7 +29,8 @@ void test_audio() {
 }
 
 // On suppose que la création du fichier audio est correcte
-bool test_read-audio() {
+// vr: correction de la fonction qui s'appelait test_read-audio et pas test_read_audio
+bool test_read_audio() {
     string morse = "---.-.---.-...---.---.---...---.-.-...-.......---.---...---.---.---...-.---.-...-.-.-...-";
     creataudio(morse) ;
     string decod = readaudio("codemorse.wav") ;

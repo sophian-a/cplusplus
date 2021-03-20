@@ -1,0 +1,19 @@
+codage.cpp:// vr: il faudrait éviter de créer le dictionnaire à chaque fois que vous appelez la fonction texttomorse, vous auriez pu écrire une classe
+codage.cpp:  // vr: mettre plutôt un dictionnaire map<char, string> vous utiliserez ainsi des char 'A' plutôt que des char* "A"
+codage.cpp:  // vr: je ne comprends pas votre code morse https://www.lexilogos.com/clavier/morse.htm ou
+codage.cpp:    m["A"] = "-.---"; // vr: je ne comprends pas votre code ? 'A' est normalement ".-"
+codage.cpp:    m["B"] = "---.-.-"; // vr: erreur: pas le même codage que le 'B' de decodage.cpp
+codage.h:// vr: tu peux aussi mettre la ligne "#pragma once" en tête des fichiers de header (les *.h), elle remplace alors les 3 lignes ifndef/define/endif
+codage.h:// vr: pas besoin dans codage.h d'inclure <map> et <iostream> juste <string>
+creataudio.cpp:// vr: si vous récupérez du code sur Internet, citez les personnes qui l'ont fait et regardez la licence sous laquelle le code est distribué
+decodage.cpp:// vr: vous créez le dictionnaire à chaque fois que vous appelez la fonction trad_mot_m donc à chaaue mot de votre phrase, c'est une greande perte de temps, vous deevz le garder (dans une classe par exemple)
+decodage.cpp:// vr: mettez des commentaires cette fonction traduit un mot en morse
+decodage.cpp:   // vr: mettre plutôt un dictionnaire map<string, char> vous utiliserez ainsi des char 'A' plutôt que des char* "A"
+decodage.cpp:    m["-.---"] = "A" ; // vr:  'A' est '.-' pas ["-.---"
+decodage.cpp:    m["---.-.-.-"] = "B" ; // vr: pas le même encodage que le 'B' de codage.cpp
+decodage.cpp:// vr: mettez des commentaires (cette fonction traduit une phrase en morse)
+morse.cpp:// vr: évite de mettre du code dans le main appelle une fonction ou une méthode de classe sur un objet
+morse.cpp:  // vr: dire qu'on peut entrer un fichier wav
+morse.cpp //vr: ne pas mettre les .o et les binaires dans un repo git
+tests.cpp:// vr: correction de la fonction qui s'appelait test_read-audio et pas test_read_audio
+tests.h:// vr: ajout de la declaration de la fonction de test
