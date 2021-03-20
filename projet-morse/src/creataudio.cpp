@@ -7,6 +7,7 @@
 #include "decodage.h"
 using namespace std;
 
+// vr: si vous récupérez du code sur Internet, citez les personnes qui l'ont fait et regardez la licence sous laquelle le code est distribué
 namespace little_endian_io
 {
   template <typename Word>
